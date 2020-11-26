@@ -1,0 +1,31 @@
+{
+  "name": "phpcq/composer-plugin",
+  "type": "library",
+  "description": "PHP code quality composer plugin.",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Christian Schiffler",
+      "email": "c.schiffler@cyberspectrum.de",
+      "homepage": "http://cyberspectrum.de",
+      "role": "lead"
+    },
+    {
+      "name": "David Molineus",
+      "email": "david.molineus@netzmacht.de",
+      "homepage": "https://netzmacht.de",
+      "role": "lead"
+    }
+  ],
+  "require": {
+    "php": "^7.3"
+  },
+  "extra": {
+    "branch-alias": {
+      "master": "1.x-dev"
+    }
+  },
+  "bin": [
+    "bin/phpcq"
+  ]
+}
