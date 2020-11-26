@@ -42,6 +42,9 @@ exit(
                 throw new RuntimeException('Downloading phar failed');
             }
 
+            // TODO: We should have a signature and validate it here. We need a place to define the trusted fingerprints
+            // If we do signing, we probably have to require phpcq/gnupg
+
             chmod($this->pharPath, 0755);
             if (!is_executable($this->pharPath)) {
                 throw new RuntimeException('Downloaded phar is not executable');
@@ -56,7 +59,9 @@ exit(
             // Append php binary and the path
             array_unshift($arguments, $this->phpBinary, $this->pharPath);
 
+            // TODO: Should we force --ansi by default?
+
             return implode(' ', array_map('escapeshellarg', $arguments));
         }
-    }
-)($argv ?? []));
+    })($argv ?? [])
+);
