@@ -1,5 +1,5 @@
 {
-  "name": "phpcq/composer-plugin",
+  "name": "phpcq/runner-bootstrap",
   "type": "library",
   "description": "PHP code quality composer plugin.",
   "license": "MIT",
