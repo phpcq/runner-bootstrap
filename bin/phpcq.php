@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 exit(
     (new class() {
-        // TODO: Correct path?
-        private const DOWNLOAD_URL = 'https://phpcq.github.io/phpcq/phpcq-latest.phar';
+        private const DOWNLOAD_URL = 'https://phpcq.github.io/distrib/phpcq/unstable/phpcq.phar';
 
         /** @var string */
         private $pharPath;
