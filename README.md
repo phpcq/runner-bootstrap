@@ -11,7 +11,7 @@ composer require phpcq/bootstrap-runner ^1.0@dev
 ## Usage
 
 First make sure you have a configuration file. For more information have a look at
-[https://github.com/phpcq](https://github.com/phpcq).
+[https://github.com/phpcq/phpcq](https://github.com/phpcq/phpcq).
 
 ```
 vendir/bin/phpcq --help
