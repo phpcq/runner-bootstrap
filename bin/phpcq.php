@@ -25,9 +25,12 @@ exit(
             }
 
             $command = $this->buildCommand($argv);
-            passthru($command, $status);
+            $process = proc_open($command, [STDIN, STDOUT, STDOUT], $pipes);
+            if (!is_resource($process)) {
+                throw new RuntimeException('Unable to launch phpcq.phar process');
+            }
 
-            return $status;
+            return proc_close($process);
         }
 
         private function downloadPhar(): void
