@@ -55,10 +55,12 @@ exit(
             // Drop current command
             array_shift($arguments);
 
+            if (!in_array('--ansi', $arguments, true) && !in_array('--no-ansi', $arguments, true)) {
+                array_unshift($arguments, '--ansi');
+            }
+
             // Append php binary and the path
             array_unshift($arguments, $this->phpBinary, $this->pharPath);
-
-            // TODO: Should we force --ansi by default?
 
             return implode(' ', array_map('escapeshellarg', $arguments));
         }
