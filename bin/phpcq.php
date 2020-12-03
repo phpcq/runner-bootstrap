@@ -73,7 +73,7 @@ exit(
 
         private function runSelfUpdate(array $arguments): void
         {
-            if (count($arguments) !== 2 || $arguments[1] !== '--self-update') {
+            if (count($arguments) !== 2 || $arguments[1] !== 'self-update') {
                 return;
             }
 
