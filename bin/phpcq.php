@@ -20,9 +20,6 @@ exit(
 
         public function __invoke(array $argv): int
         {
-            // TODO: Remove when we have a proper self update process
-            $this->runSelfUpdate($argv);
-
             if (!file_exists($this->pharPath)) {
                 $this->downloadPhar();
             }
@@ -69,22 +66,6 @@ exit(
             array_unshift($arguments, $this->phpBinary, $this->pharPath);
 
             return implode(' ', array_map('escapeshellarg', $arguments));
-        }
-
-        private function runSelfUpdate(array $arguments): void
-        {
-            if (count($arguments) !== 2 || $arguments[1] !== 'self-update') {
-                return;
-            }
-
-            echo 'Self update phpcq.phar' . PHP_EOL;
-
-            if (file_exists($this->pharPath)) {
-                unlink($this->pharPath);
-            }
-            $this->downloadPhar();
-
-            exit();
         }
     })($argv ?? [])
 );
